@@ -30,7 +30,7 @@ def seminator(algo, sem_options=""):
     return f"{tgba} seminator --complement={algo} {sem_options} "
 
 fribourg = goal_pipeline("fribourg")
-goal_det = goal_pipeline("piterman","-r -ht -eq -ro -sp")
+goal_det = goal_pipeline("piterman","-eq -sp")
 
 simpl = " | autfilt --small --tgba "
 end = ">%O"
