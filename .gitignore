@@ -7,3 +7,6 @@ __pycache__
 *.log
 */lcw-*
 */lcr-*
+
+# Notebooks synched via jupytext
+Run_ltlcross.ipynb
