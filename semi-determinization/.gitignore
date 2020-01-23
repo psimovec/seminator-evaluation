@@ -1,0 +1,4 @@
+# Partial results, log files, and _bogus.ltl
+data/*.parts
+data/*.log
+data/*_bogus.ltl
