@@ -1,2 +1,8 @@
 data/*.ltl
 data.seminator_variants/*.ltl
+data.goal_variants/*.ltl
+data/*.log
+data.seminator_variants/*.log
+data.goal_variants/*.log
+*.parts
+
