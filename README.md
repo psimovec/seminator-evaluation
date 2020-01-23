@@ -34,9 +34,18 @@ You can find the sets of formulas in the directory [formulae](formulae) and you 
 ## LTL to semi-deterministic automata benchmarks
 The comparison compares the performance of Seminator 2 to earlier versions of Seminator (1.1, and 1.2) and to `ltl2ldgba` from Owl. We present only data, where Spot's simplification routines were applied to _all_ automata, including those produced by Owl. In defaults settings, these simplification routines are used in Seminator, while are not used in Owl.
 
-The data can be recomputed using the notebook [semi-determinization/Run_ltlcross.ipynb](semi-determinization/Run_ltlcross.ipynb) and are already precomputed in this repository. However, the running times for these benchmarks are small so takes only about 2 minutes to recompute them.
+The data can be recomputed using the notebook [semi-determinization/Run_ltlcross.ipynb](semi-determinization/Run_ltlcross.ipynb) and are already precomputed in this repository (in directory `semi-determinization/data`). However, the running times for these benchmarks are small so takes only about 2 minutes to recompute them.
 
 We visualize the data using `ltlcross_wrapper` in 3 notebooks.
 * [semi-determinization/Results-owl-best.ipynb](semi-determinization/Results-owl-best.ipynb) compares 3 versions of Seminator (1.1, 1.2, and 2) with Owl on formulas such that `ltl2tgba` translates them into automaton that is not semi-deterministic. The `owl-best` stands for the following: we have run Owl with both `ltl2ldgba -a` and `ltl2ldgba -s` applied the Spot's simplifications on both of them, and choose the better result as the best automaton that we are able to produce using Owl.
 * [semi-determinization/Results-owl-best-sd.ipynb](semi-determinization/Results-owl-best-sd.ipynb) compares Seminator 2 with Owl (in the same setting as above) on formulas such that `ltl2tgba` produces automaton that is already semi-deterministic and thus Seminator does not do much work. Again, we use the _best-for-Owl_ approach.
 * [semi-determinization/Results.ipynb](semi-determinization/Results.ipynb) (not used in the paper) Same as [semi-determinization/Results-owl-best.ipynb](semi-determinization/Results-owl-best.ipynb) but we now use only the default settings for Owl and apply Spot's simplification routines on it to get the automata for Owl.
+
+## Complementation
+Notebooks and data in directory `complement` benchmark the performance of complementation implemented in Seminator to other complementation algorithms. The precomputed data are stored in the directory `complement/data`. You can recompute the data using the notebook [complement/Run_ltlcross](complement/Run_ltlcross.ipynb). 
+
+However, compute all the presented results takes **several hours**.
+The data are already precomputed in the directory `complement/data` so you can explore them using these notebooks:
+* [complement/Results_BA](complement/Results_BA.ipynb), the notebook used to produce plots & tables presented in the paper.
+* [complement/Seminator_variants](complement/Seminator_variants.ipynb) gives more insight into how different configuration of the first step (converting nondeterministic automaton into semi-deterministic one) affects the result. It also shows how often is each pipeline of seminator successfull in being chosen as the best one (data stored in `complement/data.seminator_variants`).
+* [complement/GOAL-variants](complement/GOAL-variants.ipynb) served as a basis to choose the best possible configuration of the complementation in GOAL (data stored in `complement/data.goal_variants`).
