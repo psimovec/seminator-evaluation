@@ -16,8 +16,8 @@ autfilt_yes = f" && autfilt --small --tgba {tmp_out} > %O"
 cleanup = f" ;rm -f {tmp_name} {tmp_out}"
 
 
-buechenic_cmd = f"java -jar {roll_jar} complement {tmp_name} -v 0 -table -syntactic -out {tmp_out}"
-buechenic     = sba + save_to_file + " && " + buechenic_cmd
+buechic_cmd = f"java -jar {roll_jar} complement {tmp_name} -v 0 -table -syntactic -out {tmp_out}"
+buechic     = sba + save_to_file + " && " + buechic_cmd
 
 
 def goal_cmd(algo, options=""):
@@ -41,9 +41,9 @@ tools = {
     "yes.goal#pit"    : goal_det + autfilt_yes + cleanup,
     "no.goal#fri"     : fribourg + autfilt_no  + cleanup,
     "yes.goal#fri"    : fribourg + autfilt_yes + cleanup,
-    # Buechenic
-    "no.buechenic"    : buechenic + autfilt_no  + cleanup,
-    "yes.buechenic"   : buechenic + autfilt_yes + cleanup,
+    # Buechic
+    "no.buechic"    : buechic + autfilt_no  + cleanup,
+    "yes.buechic"   : buechic + autfilt_yes + cleanup,
     # Autfilt
     "no.autfilt"      : tgba + "autfilt --complement --tgba > %O",
     "no.autfilt_DPA"  : tgba + "autfilt --complement > %O",
