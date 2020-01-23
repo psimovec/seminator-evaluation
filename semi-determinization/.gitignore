@@ -2,3 +2,6 @@
 data/*.parts
 data/*.log
 data/*_bogus.ltl
+
+# Merged results
+data/random_sd_merged.csv
