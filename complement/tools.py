@@ -7,13 +7,12 @@ goal_root = "other_tools/GOAL-20200107"
 goal_bin = "$LCW_GOAL_BIN"
 
 tgba = "ltl2tgba -D %f | "
-sba  = "ltl2tgba -D %f | autfilt -B | "
+sba  = "ltl2tgba -D %f | autfilt -B "
 
-save_to_file = f"cat > {tmp_name}"
+save_to_file = f" > {tmp_name}"
 
-autfilt_no  = f" && cat {tmp_out} > %O"
-autfilt_yes = f" && autfilt --small --tgba {tmp_out} > %O"
-cleanup = f" ;rm -f {tmp_name} {tmp_out}"
+autfilt_no  = f"; err=$?; rm -f {tmp_name}; mv -f {tmp_out} %O; exit $err"
+autfilt_yes = f" && autfilt --small --tgba {tmp_out} > %O; err=$?; rm -f {tmp_name} {tmp_out}; exit $err"
 
 
 buechic_cmd = f"java -jar {roll_jar} complement {tmp_name} -v 0 -table -syntactic -out {tmp_out}"
@@ -37,13 +36,13 @@ end = ">%O"
 
 tools = {
     # GOAL & Fribourg in GOAL
-    "no.goal#pit"     : goal_det + autfilt_no  + cleanup,
-    "yes.goal#pit"    : goal_det + autfilt_yes + cleanup,
-    "no.goal#fri"     : fribourg + autfilt_no  + cleanup,
-    "yes.goal#fri"    : fribourg + autfilt_yes + cleanup,
+    "no.goal#pit"     : goal_det + autfilt_no ,
+    "yes.goal#pit"    : goal_det + autfilt_yes,
+    "no.goal#fri"     : fribourg + autfilt_no ,
+    "yes.goal#fri"    : fribourg + autfilt_yes,
     # Buechic
-    "no.buechic"    : buechic + autfilt_no  + cleanup,
-    "yes.buechic"   : buechic + autfilt_yes + cleanup,
+    "no.buechic"    : buechic + autfilt_no ,
+    "yes.buechic"   : buechic + autfilt_yes,
     # Autfilt
     "no.autfilt"      : tgba + "autfilt --complement --tgba > %O",
     "no.autfilt_DPA"  : tgba + "autfilt --complement > %O",
