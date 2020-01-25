@@ -10,7 +10,7 @@ We provide evaluation of Seminator performing 2 tasks:
 For both tasks, we start from LTL formulas that we convert to TGBA. The reasons behind this are that (1.) LTL is a convenient formalism for describing properties, (2.) `ltl2ldba` can take only LTL fromulas as input and it is basically the only relevant competitor for Seminator for conversion of properties to sDBA.
 
 ## Requirements
-In order to reproduce the results, your mashine has to fullfill several requirements that are listed below. Or, you can use the [docker image](https://github.com/adl/seminator-docker) which meets all the requirements.
+In order to reproduce the results, your machine has to fullfill several requirements that are listed below. Or, you can use the [docker image](https://github.com/adl/seminator-docker) which meets all the requirements.
 * [Jupyter](https://jupyter.org/)
 * [ltlcross_wrapper 0.7](https://github.com/xblahoud/ltlcross_wrapper/tag/v0.7) that is a Python wrapper around `ltlcross` from Spot.
 * [pandas 0.24+](https://pandas.pydata.org/)
