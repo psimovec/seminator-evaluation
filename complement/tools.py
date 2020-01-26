@@ -7,7 +7,7 @@ goal_root = "other_tools/GOAL-20200107"
 goal_bin = "$LCW_GOAL_BIN"
 
 tgba = "ltl2tgba -D %f | "
-sba  = "ltl2tgba -D %f | autfilt -B "
+sba  = "ltl2tgba -D -B %f "
 
 save_to_file = f" > {tmp_name}"
 
