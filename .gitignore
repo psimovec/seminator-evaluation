@@ -8,4 +8,6 @@ __pycache__
 */lcw-*
 */lcr-*
 
-# Notebooks synched via jupytext
+# Temporary files from formula generation
+formulae/tmp.ltl
+formulae/literature.ltl
