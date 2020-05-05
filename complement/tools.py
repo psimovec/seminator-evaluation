@@ -3,7 +3,7 @@ tmp_out = "$LCW_TMP.out.hoa"
 
 roll_jar = "other_tools/roll-library/ROLL.jar"
 
-goal_root = "other_tools/GOAL-20200107"
+goal_root = "other_tools/GOAL-20200505"
 goal_bin = "$LCW_GOAL_BIN"
 
 tgba = "ltl2tgba -D %f | "
@@ -41,19 +41,19 @@ tools = {
     "no.goal#fri"     : fribourg + autfilt_no ,
     "yes.goal#fri"    : fribourg + autfilt_yes,
     # Buechic
-    "no.buechic"    : buechic + autfilt_no ,
-    "yes.buechic"   : buechic + autfilt_yes,
+    "no.roll"    : buechic + autfilt_no ,
+    "yes.roll"   : buechic + autfilt_yes,
     # Autfilt
-    "no.autfilt"      : tgba + "autfilt --complement --tgba > %O",
-    "no.autfilt_DPA"  : tgba + "autfilt --complement > %O",
-    "yes.autfilt"     : tgba + "autfilt --complement --tgba --small > %O",
-    "yes.autfilt_DPA" : tgba + "autfilt --complement --small > %O",
+    "no.spot"      : tgba + "autfilt --complement --tgba > %O",
+    "no.spot_DPA"  : tgba + "autfilt --complement > %O",
+    "yes.spot"     : tgba + "autfilt --complement --tgba --small > %O",
+    "yes.spot_DPA" : tgba + "autfilt --complement --small > %O",
     # Seminator + sDBA complementation
-    "yes.ncsb#spot" : seminator("spot", "--cut-always") + end,
-    "no.ncsb#spot"  : seminator("spot", "--cut-always --postprocess-comp=0") + end,
-    "yes.ncsb#pldi" : seminator("pldi", "--cut-always") + end,
-    "no.ncsb#pldi"  : seminator("pldi", "--cut-always --postprocess-comp=0") + end,
-    "yes.ncsb#best" : seminator("best", "--cut-always") + end,
-    "no.ncsb#best"  : seminator("best", "--cut-always --postprocess-comp=0") + end,
+    "yes.seminator#spot" : seminator("spot", "--cut-always") + end,
+    "no.seminator#spot"  : seminator("spot", "--cut-always --postprocess-comp=0") + end,
+    "yes.seminator#pldi" : seminator("pldi", "--cut-always") + end,
+    "no.seminator#pldi"  : seminator("pldi", "--cut-always --postprocess-comp=0") + end,
+    "yes.seminator#best" : seminator("best", "--cut-always") + end,
+    "no.seminator#best"  : seminator("best", "--cut-always --postprocess-comp=0") + end,
 }
 benchmark_names = [f"{s}_{t}" for s in ["literature","random"] for t in ["det","sd","nd"]]
