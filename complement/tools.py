@@ -3,7 +3,7 @@ tmp_out = "$LCW_TMP.out.hoa"
 
 roll_jar = "other_tools/roll-library/ROLL.jar"
 
-goal_root = "other_tools/GOAL-20200505"
+goal_root = "other_tools/GOAL-20200506"
 goal_bin = "$LCW_GOAL_BIN"
 
 tgba = "ltl2tgba -D %f | "
