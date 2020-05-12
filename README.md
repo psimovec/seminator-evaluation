@@ -12,7 +12,7 @@ For both tasks, we start from LTL formulas that we convert to TGBA. The reasons 
 ## Requirements
 In order to reproduce the results, your machine has to fullfill several requirements that are listed below. Or, you can use the [docker image](https://github.com/adl/seminator-docker) which meets all the requirements.
 * [Jupyter](https://jupyter.org/)
-* [ltlcross_wrapper 0.7](https://github.com/xblahoud/ltlcross_wrapper/tag/v0.7) that is a Python wrapper around `ltlcross` from Spot.
+* [ltlcross_wrapper >= 0.7.2](https://github.com/xblahoud/ltlcross_wrapper/tag/v0.7) that is a Python wrapper around `ltlcross` from Spot. It works best with working LaTeX installation and [tikzmagic](https://github.com/xblahoud/tikzmagic) (not required).
 * [pandas 0.24+](https://pandas.pydata.org/)
 * [Seminator 2](https://github.com/mklokocka/seminator/releases/tag/v2) has to be installed in your `PATH` as `seminator`
 * [Seminator 1.1](https://github.com/mklokocka/seminator/releases/tag/v1.1.0) has to be installed in your `PATH` as `seminator-1.1`
@@ -21,7 +21,7 @@ In order to reproduce the results, your machine has to fullfill several requirem
 * [Owl library](https://owl.model.in.tum.de/) version 19.06.03 has to be installed and at least the commands `owl-server` and `owl-client` has to be accessible in your `PATH`.
 * other complementation tools should ge installed in the directory `coplement/other_tools`:
   - [ROLL](https://iscasmc.ios.ac.cn/roll/doku.php)
-  - [GOAL v. 20200107](http://goal.im.ntu.edu.tw/release/GOAL-20200107.zip) with the [Fribourg plugin](http://goal.im.ntu.edu.tw/wiki/doku.php?id=goal:extensions#fribourg_construction).
+  - [GOAL v. 20200506](http://goal.im.ntu.edu.tw/release/GOAL-20200506.zip) with the [Fribourg plugin](http://goal.im.ntu.edu.tw/wiki/doku.php?id=goal:extensions#fribourg_construction).
 
 ## Formulas
 We use 2 sources of formulas: random formulas and formulas that appeared in previous benchmarks. We further divide these formulas into categories based on type of automata that Spot's `ltl2tgba` produces from the corresponding formula. We have 3 types:
