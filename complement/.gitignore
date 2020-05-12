@@ -6,3 +6,4 @@ data.seminator_variants/*.log
 data.goal_variants/*.log
 *.parts
 
+data_check
