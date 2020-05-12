@@ -5,3 +5,4 @@ data/*_bogus.ltl
 
 # Merged results
 data/random_sd_merged.csv
+data/literature_sd_merged.csv
