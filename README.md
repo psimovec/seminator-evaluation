@@ -13,7 +13,7 @@ For both tasks, we start from LTL formulas that we convert to TGBA. The reasons 
 In order to reproduce the results, your machine has to fullfill several requirements that are listed below. Or, you can use the [docker image](https://github.com/adl/seminator-docker) which meets all the requirements.
 * [Jupyter](https://jupyter.org/)
 * [ltlcross_wrapper >= 0.7.2](https://github.com/xblahoud/ltlcross_wrapper/tag/v0.7) that is a Python wrapper around `ltlcross` from Spot. It works best with working LaTeX installation and [tikzmagic](https://github.com/xblahoud/tikzmagic) (not required).
-* [pandas 0.24+](https://pandas.pydata.org/)
+* [pandas 1.0.0+](https://pandas.pydata.org/)
 * [Seminator 2](https://github.com/mklokocka/seminator/releases/tag/v2) has to be installed in your `PATH` as `seminator`
 * [Seminator 1.1](https://github.com/mklokocka/seminator/releases/tag/v1.1.0) has to be installed in your `PATH` as `seminator-1.1`
 * [Seminator 1.2](https://github.com/mklokocka/seminator/releases/tag/v1.2.0) has to be installed in your `PATH` as `seminator-1.2`
